@@ -1,0 +1,78 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/Users/mrastall/Documents/makers_work/week4/bookmark_manager/spec/features/bookmark_manager_spec.rb": {
+        "lines": [
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/mrastall/Documents/makers_work/week4/bookmark_manager/app/app.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          null,
+          1,
+          2,
+          null,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null
+        ]
+      },
+      "/Users/mrastall/Documents/makers_work/week4/bookmark_manager/spec/unit/bookmarks_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/mrastall/Documents/makers_work/week4/bookmark_manager/app/bookmarks.rb": {
+        "lines": [
+          null,
+          1,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null,
+          null
+        ]
+      }
+    },
+    "timestamp": 1603121171
+  }
+}

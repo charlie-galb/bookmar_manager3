@@ -7,7 +7,12 @@
     <link rel="stylesheet" href="./style.css">
   </head>
   <body>
-    <h1>"Here are the bookmarks:"</h1>
-
+    <h1>Here are the Bookmarks:</h1>
+    
+    <ul>
+      <% @bookmarks.each do |bookmark| %>
+        <li><%= bookmark %></li>
+      <% end %>
+    </ul>
   </body>
 </html>
