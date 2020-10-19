@@ -10,6 +10,17 @@
   <body>
     <h1>Welcome to Bookmark Manager</h1>
 
+    <label for="bookmarks">Which bookmarks would you like to view?:</label>
+
+    <form action="/bookmarks" method="post">
+    <select name="bookmarks" id="bookmarks">
+      <option value="All">All</option>
+    </select>
+    <br><br>
+      <input type="submit" value="Submit">
+    </form>
+
+
 
   </body>
 </html>
