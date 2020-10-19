@@ -1,0 +1,13 @@
+
+source 'https://rubygems.org'
+
+gem 'shotgun'
+gem 'sinatra'
+
+group :test do
+  gem 'capybara'
+  gem 'rspec'
+  gem 'rubocop', '0.79.0'
+  gem 'simplecov'
+  gem 'simplecov-console'
+end
