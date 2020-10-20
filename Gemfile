@@ -5,6 +5,7 @@ gem 'shotgun'
 gem 'sinatra'
 
 group :test do
+  gem 'pg'
   gem 'capybara'
   gem 'rspec'
   gem 'rubocop', '0.79.0'
