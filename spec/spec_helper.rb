@@ -1,5 +1,6 @@
 
 ENV['RACK_ENV'] = 'test'
+ENV['ENVIRONMENT'] = 'test'
 
 require_relative '../app/app.rb'
 
