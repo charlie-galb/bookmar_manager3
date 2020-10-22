@@ -5,22 +5,22 @@ describe Bookmarks do
     it 'displays a list bookmarks' do
       print 'setting up test database'
       connection = PG.connect(dbname: 'bookmark_manager_test')
-      connection.exec("INSERT INTO bookmarks (url) VALUES ('http://www.makersacademy.com');")
-      connection.exec("INSERT INTO bookmarks (url) VALUES ('http://www.google.com');")
-      connection.exec("INSERT INTO bookmarks (url) VALUES ('http://www.destroyallsoftware.com');")
+      connection.exec("INSERT INTO bookmarks (url, Title) VALUES ('http://www.makersacademy.com', 'Makers');")
+      connection.exec("INSERT INTO bookmarks (url, Title) VALUES ('http://www.google.com', 'Google');")
+      connection.exec("INSERT INTO bookmarks (url, Title) VALUES ('http://www.destroyallsoftware.com', 'Destroy All Software');")
 
       bookmarks = Bookmarks.all
 
-      expect(bookmarks).to include('http://www.makersacademy.com')
-      expect(bookmarks).to include('http://www.destroyallsoftware.com')
-      expect(bookmarks).to include('http://www.google.com')
+      expect(bookmarks).to include('Makers')
+      expect(bookmarks).to include('Destroy All Software')
+      expect(bookmarks).to include('Google')
     end
   end
 
   describe '#create' do
     it 'creates a new bookmark' do
-      Bookmarks.create(url: 'http://www.testbookmark.com')
-      expect(Bookmarks.all).to include 'http://www.testbookmark.com'
+      Bookmarks.create(url: 'http://www.testbookmark.com', title: "Test Bookmarks")
+      expect(Bookmarks.all).to include 'Test Bookmarks'
     end
   end
 end
