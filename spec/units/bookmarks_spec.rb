@@ -2,25 +2,24 @@ require 'pg'
 
 describe Bookmarks do
   describe '#all' do
-    it 'displays a list bookmarks' do
+    it 'contains an array of hyperlinks' do
       print 'setting up test database'
-      connection = PG.connect(dbname: 'bookmark_manager_test')
-      connection.exec("INSERT INTO bookmarks (url, Title) VALUES ('http://www.makersacademy.com', 'Makers');")
-      connection.exec("INSERT INTO bookmarks (url, Title) VALUES ('http://www.google.com', 'Google');")
-      connection.exec("INSERT INTO bookmarks (url, Title) VALUES ('http://www.destroyallsoftware.com', 'Destroy All Software');")
+      Bookmarks.create(url: 'http://www.makersacademy.com', title: 'Makers')
+      Bookmarks.create(url: 'http://www.google.com', title: 'Google')
+      Bookmarks.create(url: 'http://www.destroyallsoftware.com', title: 'Destroy All Software')
 
       bookmarks = Bookmarks.all
 
-      expect(bookmarks).to include('Makers')
-      expect(bookmarks).to include('Destroy All Software')
-      expect(bookmarks).to include('Google')
+      expect(bookmarks).to include("<a href='http://www.makersacademy.com'>'Makers'</a>")
+      expect(bookmarks).to include("<a href='http://www.google.com'>'Google'</a>")
+      expect(bookmarks).to include("<a href='http://www.destroyallsoftware.com'>'Destroy All Software'</a>")
     end
   end
 
   describe '#create' do
     it 'creates a new bookmark' do
       Bookmarks.create(url: 'http://www.testbookmark.com', title: "Test Bookmarks")
-      expect(Bookmarks.all).to include 'Test Bookmarks'
+      expect(Bookmarks.all).to include "<a href='http://www.testbookmark.com'>'Test Bookmarks'</a>"
     end
   end
 end
